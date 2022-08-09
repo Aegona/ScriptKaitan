@@ -340,7 +340,7 @@ local serv = win:Server("Auto-Farm", "")
 local tgls = serv:Channel("Farm kaitan")
 local fps = serv:Channel("FPS")
     local raid = serv:Channel("ลงดัน")
-
+local gg = serv:Channel("Box")
 
 raid:Toggle("ฆ่าอัตโนมัติ",false, function(value)
 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren())do
@@ -430,6 +430,46 @@ end
 end
 end)
 end)
+
+gg:Toggle("เก็บกล่อง เทา",false, function(value)
+      while wait() do
+    for i,v in pairs(game:GetService("Workspace").Chest1:GetDescendants()) do
+   if v.Name == "TouchInterest" then 
+game.Players.LocalPlayer.Character.Humanoid.Health = die
+wait(.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(.1)
+end
+end
+end
+end)
+
+gg:Toggle("เก็บกล่อง ทอง",false, function(t)
+      while wait() do
+    for i,v in pairs(game:GetService("Workspace").Chest2:GetDescendants()) do
+   if v.Name == "TouchInterest" then 
+game.Players.LocalPlayer.Character.Humanoid.Health = die
+wait(.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(.1)
+end
+end
+end
+end)
+
+gg:Toggle("เก็บกล่อง เพรช",false, function(t)
+      while wait() do
+    for i,v in pairs(game:GetService("Workspace").Chest3:GetDescendants()) do
+   if v.Name == "TouchInterest" then 
+game.Players.LocalPlayer.Character.Humanoid.Health = die
+wait(.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(.1)
+end
+end
+end
+end)
+
 
 tgls:Toggle("Auto โลก2",false, function(value)
 _G.AutoSecondSea = value
@@ -823,69 +863,9 @@ end
 end)
 end)
 
-tgls:Toggle("เก็บกล่อง เทา",false, function(value)
-_G.GrabBox1 = value
-end)
-tgls:Toggle("เก็บกล่อง ทอง",false, function(value)
-_G.GrabBox2 = value
-end)
-tgls:Toggle("เก็บกล่อง เพรช",false, function(value)
-_G.GrabBox3 = value
-end)
 
-spawn(function()
-    pcall(function()
-        if _G.GrabBox1 then
-            while wait() do
 
-    for i,v in pairs(game:GetService("Workspace").Chest1:GetDescendants()) do
-   if v.Name == "TouchInterest" then 
-game.Players.LocalPlayer.Character.Humanoid.Health = die
-wait(.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
-end
-end
-end
-end
-end)
-end)
 
-spawn(function()
-    pcall(function()
-        if _G.GrabBox2 then
-            while wait() do
-    for i,v in pairs(game:GetService("Workspace").Chest2:GetDescendants()) do
-   if v.Name == "TouchInterest" then 
-game.Players.LocalPlayer.Character.Humanoid.Health = die
-wait(.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
-end
-end
-end
-end
-end)
-end)
-
-spawn(function()
-    pcall(function()
-        if _G.GrabBox3 then
-            while wait() do
-
-    for i,v in pairs(game:GetService("Workspace").Chest3:GetDescendants()) do
-   if v.Name == "TouchInterest" then 
-game.Players.LocalPlayer.Character.Humanoid.Health = die
-wait(.1)
-
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
-end
-end
-end
-end
-end)
-end)
 
 while wait(.1) do
     pcall(function()
@@ -1065,6 +1045,4 @@ end)
     end)
     
     
-
-
 
