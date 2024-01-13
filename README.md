@@ -438,7 +438,7 @@ gg:Toggle("เก็บกล่อง เทา",false, function(value)
 game.Players.LocalPlayer.Character.Humanoid.Health = die
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
+wait(1)
 end
 end
 end
@@ -451,7 +451,7 @@ gg:Toggle("เก็บกล่อง ทอง",false, function(t)
 game.Players.LocalPlayer.Character.Humanoid.Health = die
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
+wait(1)
 end
 end
 end
@@ -464,7 +464,7 @@ gg:Toggle("เก็บกล่อง เพรช",false, function(t)
 game.Players.LocalPlayer.Character.Humanoid.Health = die
 wait(.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.1)
+wait(1)
 end
 end
 end
@@ -1045,4 +1045,3 @@ end)
     end)
     
     
-
