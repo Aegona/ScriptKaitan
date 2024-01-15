@@ -504,11 +504,25 @@ function CheckQuest()
  end
  
  spawn(function()
+    while wait() do
+        if _G.BrinXD then
+
+ for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    if v.Name == NM then
+       v.HumanoidRootPart.CFrame = CM * CFrame.new(10,0,0)
+       wait(0.1)
+        end
+    end
+end
+end)
+
+ spawn(function()
      while wait() do
          if _G.Farm then
              CheckQuest()
              if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-                 wait(.3)
+                _G.BrinXD = false
+                wait(.3)
                  TP(CQ)
                  wait(0.5)
                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NQ,LQ)
@@ -516,15 +530,11 @@ function CheckQuest()
              elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                 TP(CM)
                 wait(1)
-
+                _G.BrinXD = true
                 
 
                 TP(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
-                 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                     if v.Name == NM then
-                        v.HumanoidRootPart.CFrame = CM * CFrame.new(0,0,-10)
-                         end
-                     end
+
                  end
              end    
          end
