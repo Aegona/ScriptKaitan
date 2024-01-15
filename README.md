@@ -516,6 +516,16 @@ function CheckQuest()
              elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                 TP(CM)
                 wait(1)
+                local posxd = game.Workspace.Enemies.Bandit.HumanoidRootPart.CFrame
+                posxd = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                local posxd2 = posxd * CFrame.new(0,0,10)
+                while _G.Farm do
+                    posxd2
+                    wait(.1)
+                    posxd2
+                    wait(0.1)
+                end
+
                 TP(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
                  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                      if v.Name == Ms then
