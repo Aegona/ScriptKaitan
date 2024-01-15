@@ -503,18 +503,26 @@ function CheckQuest()
      NoClip = false
  end
  
- spawn(function()
-    while wait() do
-        if _G.BrinXD then
+ local function MoveEnemy()
+    while _G.BrinXD do
+        wait(1)
 
- for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-    if v.Name == NM then
-       v.HumanoidRootPart.CFrame = CM * CFrame.new(10,0,0)
-       wait(0.1)
+        local playerCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 10, 0)
+
+        for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+            -- ปรับ CFrame เพื่อให้ Enemies ถูกดึงมารวมกัน
+            local playerCFrame game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CM
+            playerCFrame * CFrame.new(0,10,0)
+            v.HumanoidRootPart.CFrame = CM
         end
     end
 end
-end)
+
+-- เรียกใช้งานฟังก์ชัน
+MoveEnemy()
+
+
+
 
  spawn(function()
      while wait() do
@@ -528,10 +536,9 @@ end)
                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NQ,LQ)
                  
              elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                TP(CM)
                 wait(1)
                 _G.BrinXD = true
-                
+                MoveEnemy()
 
                 TP(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
 
