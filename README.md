@@ -517,16 +517,12 @@ function CheckQuest()
                 TP(CM)
                 wait(1)
 
+                
 
                 TP(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
                  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                      if v.Name == NM then
-                         posmon = v.HumanoidRootPart.CFrame
-                         wait(.1)
-                         posmon = v.HumanoidRootPart.CFrame
-                         wait(.1)
-                         posmon = v.HumanoidRootPart.CFrame
-                         TP(v.HumanoidRootPart.CFrame * CFrame.new(0,25,0))
+                        v.HumanoidRootPart.CFrame = CM * CFrame.new(0,0,-10)
                          end
                      end
                  end
@@ -578,7 +574,7 @@ function CheckQuest()
               while _G.BringMob do wait()
              for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                   for i2,v2 in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                     if v.Name == NM and v2.Name == Ms then
+                     if v.Name == Ms and v2.Name == Ms then
                          v2.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
                          v2.HumanoidRootPart.CanCollide = false
                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Method
